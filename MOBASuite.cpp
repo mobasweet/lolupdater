@@ -319,12 +319,14 @@ void dota2(bool restore)
 
 void l2(bool restore)
 {
-	for (auto i = 0; i < 8; i++)
+	for (auto i = 0; i < 10; i++)
 	{
 		*n[i] = '\0';
 	}
 	terminate_process(L"L2.exe");
 	cfg(L"l2");
+	PathAppend(8, n[0]);
+	PathAppend(8, L"gameManager\\gameManager.exe");
 	PathAppend(0, L"system");
 	UnblockFile(PathJoin(0, L"L2.exe"));
 	PathCombine(1, 0, L"d3dcompiler_43.dll");
@@ -352,6 +354,18 @@ void l2(bool restore)
 		download(L"vcomp120.dll", 4);
 		download(L"vcomp140.dll", 6);
 		download(L"vcruntime140.dll", 7);
+	}
+
+	sei = {};
+	sei.cbSize = sizeof(SHELLEXECUTEINFOW);
+	sei.fMask = 64;
+	sei.nShow = 5;
+	sei.lpParameters = L"run -l \"4game2.0\" -k \"l2 - eu\" -u \"https://eu-new.4game.com/lineage2\"  ";
+	sei.lpFile = n[8];
+	ShellExecuteEx(&sei);
+	if (sei.hProcess != nullptr)
+	{
+		WaitForSingleObject(sei.hProcess, INFINITE);
 	}
 	exit(0);
 }
