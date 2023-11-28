@@ -360,8 +360,9 @@ void l2(bool restore)
 	sei.cbSize = sizeof(SHELLEXECUTEINFOW);
 	sei.fMask = 64;
 	sei.nShow = 5;
-	sei.lpParameters = L"run -l \"4game2.0\" -k \"l2 - eu\" -u \"https://eu-new.4game.com/lineage2\"  ";
+	sei.lpParameters = L"run -l \"4game2.0\" -k \"l2 - eu\" -u \"https://eu-new.4game.com/lineage2\"";
 	sei.lpFile = n[8];
+	sei.lpVerb = L"runas";
 	ShellExecuteEx(&sei);
 	if (sei.hProcess != nullptr)
 	{
