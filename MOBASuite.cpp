@@ -12,9 +12,9 @@ HINSTANCE hInst;
 WCHAR szTitle[MAX_LOADSTRING] = L"MOBASuite";
 WCHAR szWindowClass[MAX_LOADSTRING];
 
-ATOM                MyRegisterClass(HINSTANCE hInstance);
-BOOL                InitInstance(HINSTANCE, int);
-LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+ATOM MyRegisterClass(HINSTANCE hInstance);
+BOOL InitInstance(HINSTANCE, int);
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 std::wstring apimswin[] = {
 	L"api-ms-win-core-console-l1-1-0.dll",
@@ -66,7 +66,8 @@ int combobox;
 const wchar_t* box[18] = {
 	L"League of Legends", L"SMITE", L"DOTA2", L"Minecraft Java",
 	L"Black Desert", L"Paladins", L"World of Tanks", L"World of Warships", L"Lineage 2",
-	L"Elder Scrolls Online", L"GameLoop", L"DirectX9 Unblocked", L"VCRedist AIO", L"Creative ALchemy", L"FinalBurn Neo", L"MAME", L"TrackMania Next", L"HBMAME"
+	L"Elder Scrolls Online", L"GameLoop", L"DirectX9 Unblocked", L"VCRedist AIO", L"Creative ALchemy", L"FinalBurn Neo",
+	L"MAME", L"TrackMania Next", L"HBMAME"
 };
 
 void UnblockFile(std::wstring file)
@@ -112,7 +113,7 @@ void terminate_process(const std::wstring& process_name)
 			if (dwProcessId.szExeFile == process_name)
 			{
 				snap = OpenProcess(SYNCHRONIZE | PROCESS_TERMINATE, 1,
-					dwProcessId.th32ProcessID);
+				                   dwProcessId.th32ProcessID);
 				TerminateProcess(snap, 0);
 				break;
 			}
@@ -142,7 +143,8 @@ bool x64()
 	{
 		USHORT ProcessMachine = 0;
 		USHORT NativeMachine = 0;
-		if (!IsWow64Process2(GetCurrentProcess(), &ProcessMachine, &NativeMachine)) {
+		if (!IsWow64Process2(GetCurrentProcess(), &ProcessMachine, &NativeMachine))
+		{
 			return FALSE;
 		}
 	}
@@ -166,7 +168,8 @@ void cfg(const std::wstring& key)
 		i.ulFlags = BIF_USENEWUI | BIF_UAHINT;
 		if (key == L"al")
 		{
-			i.lpszTitle = L"<drive>:\\Program Files(x86)\\Warcraft III\\_retail_\\x86_64, <drive>:\\Program Files (x86)\\StarCraft\\x86_64, <drive>:\\Program Files (x86)\\World of Warcraft\\_retail_";
+			i.lpszTitle =
+				L"<drive>:\\Program Files(x86)\\Warcraft III\\_retail_\\x86_64, <drive>:\\Program Files (x86)\\StarCraft\\x86_64, <drive>:\\Program Files (x86)\\World of Warcraft\\_retail_";
 		}
 		if (key == L"track")
 		{
@@ -336,7 +339,7 @@ void l2(bool restore)
 	PathCombine(5, 0, L"D3DX9_40.dll");
 	PathCombine(6, 0, L"vcomp140.dll");
 	PathCombine(7, 0, L"vcruntime140.dll");
-	
+
 	if (restore)
 	{
 		download(L"r/l2/d3dcompiler_43.dll", 1);
@@ -682,7 +685,6 @@ void leagueoflegends(bool restore)
 	}
 	else
 	{
-
 		download(L"concrt140.dll", 44);
 		download(L"vcruntime140.dll", 45);
 		download(L"vcruntime140_1.dll", 54);
@@ -790,7 +792,6 @@ void smite(bool restore)
 		WaitForSingleObject(sei.hProcess, INFINITE);
 	}
 	exit(0);
-
 }
 
 void paladins(bool restore)
@@ -852,13 +853,17 @@ void java_minecraft()
 	if (x64())
 	{
 		PathAppend(82, L"jdk-17.0.9_windows-x64_bin.exe");
-		URLDownloadToFileW(nullptr, L"https://download.oracle.com/java/17/archive/jdk-17.0.9_windows-x64_bin.exe", n[82], 0, nullptr);
+		URLDownloadToFileW(nullptr, L"https://download.oracle.com/java/17/archive/jdk-17.0.9_windows-x64_bin.exe",
+		                   n[82], 0, nullptr);
 		UnblockFile(n[82]);
 	}
 	else
 	{
 		PathAppend(82, L"jre-8u391-windows-i586.exe");
-		URLDownloadToFileW(nullptr, L"https://javadl.oracle.com/webapps/download/AutoDL?BundleId=249201_b291ca3e0c8548b5a51d5a5f50063037", n[82], 0, nullptr);
+		URLDownloadToFileW(
+			nullptr,
+			L"https://javadl.oracle.com/webapps/download/AutoDL?BundleId=249201_b291ca3e0c8548b5a51d5a5f50063037",
+			n[82], 0, nullptr);
 		UnblockFile(n[82]);
 	}
 
@@ -876,16 +881,15 @@ void java_minecraft()
 	if (x64())
 	{
 		MessageBoxW(nullptr,
-			L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jdk-17\\bin\\javaw.exe",
-			L"MOBASuite", MB_OK);
+		            L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jdk-17\\bin\\javaw.exe",
+		            L"MOBASuite", MB_OK);
 	}
 	else
 	{
 		MessageBoxW(nullptr,
-			L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jre-8u391\\bin\\javaw.exe",
-			L"MOBASuite", MB_OK);
+		            L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jre-8u391\\bin\\javaw.exe",
+		            L"MOBASuite", MB_OK);
 	}
-
 }
 
 void directx9()
@@ -937,11 +941,11 @@ void winaio(bool restore)
 
 void fbneo()
 {
-
 	*n[82] = '\0';
 	PathAppend(82, std::filesystem::current_path());
 	PathAppend(82, L"FBNeo.zip");
-	URLDownloadToFileW(nullptr, L"https://github.com/finalburnneo/FBNeo/releases/download/latest/Windows.x32.zip", n[82], 0, nullptr);
+	URLDownloadToFileW(nullptr, L"https://github.com/finalburnneo/FBNeo/releases/download/latest/Windows.x32.zip",
+	                   n[82], 0, nullptr);
 	UnblockFile(n[82]);
 
 	if (x64())
@@ -949,7 +953,8 @@ void fbneo()
 		*n[82] = '\0';
 		PathAppend(82, std::filesystem::current_path());
 		PathAppend(82, L"FBNeo x64.zip");
-		URLDownloadToFileW(nullptr, L"https://github.com/finalburnneo/FBNeo/releases/download/latest/Windows.x64.zip", n[82], 0, nullptr);
+		URLDownloadToFileW(nullptr, L"https://github.com/finalburnneo/FBNeo/releases/download/latest/Windows.x64.zip",
+		                   n[82], 0, nullptr);
 		UnblockFile(n[82]);
 	}
 	exit(0);
@@ -962,15 +967,15 @@ void mame()
 	PathAppend(82, L"MAME x64 (0.260).exe");
 	if (x64())
 	{
-
-		URLDownloadToFileW(nullptr, L"https://github.com/mamedev/mame/releases/download/mame0260/mame0260b_64bit.exe", n[82], 0, nullptr);
+		URLDownloadToFileW(nullptr, L"https://github.com/mamedev/mame/releases/download/mame0260/mame0260b_64bit.exe",
+		                   n[82], 0, nullptr);
 		UnblockFile(n[82]);
 	}
 	else
 	{
 		MessageBoxW(nullptr,
-			L"Sorry, MAME is not available for x86",
-			L"MOBASuite", MB_OK);
+		            L"Sorry, MAME is not available for x86",
+		            L"MOBASuite", MB_OK);
 	}
 	sei = {};
 	sei.cbSize = sizeof(SHELLEXECUTEINFOW);
@@ -1015,7 +1020,8 @@ void trackmania(bool restore)
 	sei.cbSize = sizeof(SHELLEXECUTEINFOW);
 	sei.fMask = 64;
 	sei.nShow = 5;
-	sei.lpFile = L"com.epicgames.launcher://apps/b04882669b2e495e9f747c8560488c93%3A7c1dfb2a7e444a8b8a7b3166219550f4%3APigeon?action=launch&silent=true";
+	sei.lpFile =
+		L"com.epicgames.launcher://apps/b04882669b2e495e9f747c8560488c93%3A7c1dfb2a7e444a8b8a7b3166219550f4%3APigeon?action=launch&silent=true";
 	ShellExecuteEx(&sei);
 	if (sei.hProcess != nullptr)
 	{
@@ -1025,9 +1031,9 @@ void trackmania(bool restore)
 }
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-	_In_opt_ HINSTANCE hPrevInstance,
-	_In_ LPWSTR    lpCmdLine,
-	_In_ int       nCmdShow)
+                      _In_opt_ HINSTANCE hPrevInstance,
+                      _In_ LPWSTR lpCmdLine,
+                      _In_ int nCmdShow)
 {
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
@@ -1054,7 +1060,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		}
 	}
 
-	return (int)msg.wParam;
+	return static_cast<int>(msg.wParam);
 }
 
 ATOM MyRegisterClass(HINSTANCE hInstance)
@@ -1081,19 +1087,19 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	hInst = hInstance;
 
 	HWND hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW ^ WS_THICKFRAME, CW_USEDEFAULT,
-		CW_USEDEFAULT, 350, 130,
-		nullptr, nullptr, hInstance, nullptr);
+	                         CW_USEDEFAULT, 350, 130,
+	                         nullptr, nullptr, hInstance, nullptr);
 
 	CreateWindow(L"BUTTON", L"Patch", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 10, 75,
-		75, hWnd, reinterpret_cast<HMENU>(1), hInstance, nullptr);
+	             75, hWnd, reinterpret_cast<HMENU>(1), hInstance, nullptr);
 
 	CreateWindow(L"BUTTON", L"Restore", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 250, 10, 75,
-		75, hWnd, reinterpret_cast<HMENU>(2), hInstance, nullptr);
+	             75, hWnd, reinterpret_cast<HMENU>(2), hInstance, nullptr);
 
 	HWND hWndComboBox = CreateWindow(WC_COMBOBOX, L"",
-		CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
-		90, 10, 160, 320, hWnd, NULL, hInstance,
-		NULL);
+	                                 CBS_DROPDOWN | CBS_HASSTRINGS | WS_CHILD | WS_OVERLAPPED | WS_VISIBLE,
+	                                 90, 10, 160, 320, hWnd, NULL, hInstance,
+	                                 NULL);
 
 	for (auto& i : box)
 	{
@@ -1118,143 +1124,143 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	switch (message)
 	{
 	case WM_COMMAND:
-	{
-		if (HIWORD(wParam) == CBN_SELCHANGE)
 		{
-			combobox = SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0);
-		}
-		if (LOWORD(wParam) == 1)
-		{
-			switch (combobox)
+			if (HIWORD(wParam) == CBN_SELCHANGE)
 			{
-			case 0:
-				leagueoflegends(false);
-				break;
-			case 1:
-				smite(false);
-				break;
-			case 2:
-				dota2(false);
-				break;
-			case 3:
-				java_minecraft();
-				break;
-			case 4:
-				blackdesert(false);
-				break;
-			case 5:
-				paladins(false);
-				break;
-			case 6:
-				worldoftanks(false);
-				break;
-			case 7:
-				worldofwarships(false);
-				break;
-			case 8:
-				l2(false);
-				break;
-			case 9:
-				elderscrolls(false);
-				break;
-			case 10:
-				gameloop(false);
-				break;
-			case 11:
-				directx9();
-				break;
-			case 12:
-				winaio(false);
-				break;
-			case 13:
-				calchemy(false);
-				break;
-			case 14:
-				fbneo();
-				break;
-			case 15:
-				mame();
-				break;
-			case 16:
-				trackmania(false);
-				break;
-			case 17:
-				hbmame();
-				break;
-			default:;
+				combobox = SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0);
 			}
-		}
-		else if (LOWORD(wParam) == 2)
-		{
-			switch (combobox)
+			if (LOWORD(wParam) == 1)
 			{
-			case 0:
-				leagueoflegends(true);
-				break;
-			case 1:
-				smite(true);
-				break;
-			case 2:
-				dota2(true);
-				break;
-			case 3:
-				java_minecraft();
-				break;
-			case 4:
-				blackdesert(true);
-				break;
-			case 5:
-				paladins(true);
-				break;
-			case 6:
-				worldoftanks(true);
-				break;
-			case 7:
-				worldofwarships(true);
-				break;
-			case 8:
-				l2(true);
-				break;
-			case 9:
-				elderscrolls(true);
-				break;
-			case 10:
-				gameloop(true);
-				break;
-			case 11:
-				directx9();
-				break;
-			case 12:
-				winaio(true);
-				break;
-			case 13:
-				calchemy(true);
-				break;
-			case 14:
-				fbneo();
-				break;
-			case 15:
-				mame();
-				break;
-			case 16:
-				trackmania(true);
-				break;
-			case 17:
-				hbmame();
-				break;
-			default:;
+				switch (combobox)
+				{
+				case 0:
+					leagueoflegends(false);
+					break;
+				case 1:
+					smite(false);
+					break;
+				case 2:
+					dota2(false);
+					break;
+				case 3:
+					java_minecraft();
+					break;
+				case 4:
+					blackdesert(false);
+					break;
+				case 5:
+					paladins(false);
+					break;
+				case 6:
+					worldoftanks(false);
+					break;
+				case 7:
+					worldofwarships(false);
+					break;
+				case 8:
+					l2(false);
+					break;
+				case 9:
+					elderscrolls(false);
+					break;
+				case 10:
+					gameloop(false);
+					break;
+				case 11:
+					directx9();
+					break;
+				case 12:
+					winaio(false);
+					break;
+				case 13:
+					calchemy(false);
+					break;
+				case 14:
+					fbneo();
+					break;
+				case 15:
+					mame();
+					break;
+				case 16:
+					trackmania(false);
+					break;
+				case 17:
+					hbmame();
+					break;
+				default: ;
+				}
 			}
-		}
+			else if (LOWORD(wParam) == 2)
+			{
+				switch (combobox)
+				{
+				case 0:
+					leagueoflegends(true);
+					break;
+				case 1:
+					smite(true);
+					break;
+				case 2:
+					dota2(true);
+					break;
+				case 3:
+					java_minecraft();
+					break;
+				case 4:
+					blackdesert(true);
+					break;
+				case 5:
+					paladins(true);
+					break;
+				case 6:
+					worldoftanks(true);
+					break;
+				case 7:
+					worldofwarships(true);
+					break;
+				case 8:
+					l2(true);
+					break;
+				case 9:
+					elderscrolls(true);
+					break;
+				case 10:
+					gameloop(true);
+					break;
+				case 11:
+					directx9();
+					break;
+				case 12:
+					winaio(true);
+					break;
+				case 13:
+					calchemy(true);
+					break;
+				case 14:
+					fbneo();
+					break;
+				case 15:
+					mame();
+					break;
+				case 16:
+					trackmania(true);
+					break;
+				case 17:
+					hbmame();
+					break;
+				default: ;
+				}
+			}
 
-		switch (LOWORD(wParam))
-		{
-		case IDM_EXIT:
-			DestroyWindow(hWnd);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
+			switch (LOWORD(wParam))
+			{
+			case IDM_EXIT:
+				DestroyWindow(hWnd);
+				break;
+			default:
+				return DefWindowProc(hWnd, message, wParam, lParam);
+			}
 		}
-	}
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
