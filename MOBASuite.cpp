@@ -2,6 +2,7 @@
 #include "MOBASuite.h"
 #define WIN32_LEAN_AND_MEAN
 #include <filesystem>
+#include <Windows.h>
 #include <ShlObj_core.h>
 #include <tlhelp32.h>
 #include <shellapi.h>
