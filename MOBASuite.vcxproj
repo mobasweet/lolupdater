@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{633cf62c-8fc0-4438-9e2b-507adb8289fe}</ProjectGuid>
     <RootNamespace>MOBASweet</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.25997.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.26002.0</WindowsTargetPlatformVersion>
     <ProjectName>MOBASuite</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
