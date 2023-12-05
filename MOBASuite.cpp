@@ -968,7 +968,7 @@ void mame()
 	PathAppend(82, L"MAME x64 (0.261).exe");
 	if (x64())
 	{
-		URLDownloadToFileW(nullptr, L"https://github.com/mamedev/mame/releases/download/mame0260/mame0261b_64bit.exe",
+		URLDownloadToFileW(nullptr, L"https://github.com/mamedev/mame/releases/download/mame0261/mame0261b_64bit.exe",
 		                   n[82], 0, nullptr);
 		UnblockFile(n[82]);
 	}
