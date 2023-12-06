@@ -3,16 +3,16 @@
 // Used by MOBASweet.rc
 //
 #define IDC_MYICON                      2
-#define IDD_MOBASUITE_DIALOG            102
+#define IDD_LOLUPDATER_DIALOG            102
 #define IDS_APP_TITLE                   103
 #define IDD_ABOUTBOX                    103
 #define IDM_ABOUT                       104
 #define IDM_EXIT                        105
 #define IDI_ICON                        107
-#define IDC_MOBASUITE                   109
+#define IDC_LOLUPDATER                  109
 #define IDR_MAINFRAME                   128
 #define ID_ASDASD                       32771
-#define ID_WEBSITE_MOBASUITE            32772
+#define ID_LOLUPDATER_MOBASUITE            32772
 #define IDC_STATIC                      -1
 
 // Next default values for new objects

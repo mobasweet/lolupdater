@@ -1,5 +1,5 @@
 #include "framework.h"
-#include "MOBASuite.h"
+#include "LoLUpdater.h"
 #define WIN32_LEAN_AND_MEAN
 #include <filesystem>
 #include <Windows.h>
@@ -10,7 +10,7 @@
 constexpr auto MAX_LOADSTRING = 100;
 
 HINSTANCE hInst;
-WCHAR szTitle[MAX_LOADSTRING] = L"MOBASuite";
+WCHAR szTitle[MAX_LOADSTRING] = L"LoLUpdater";
 WCHAR szWindowClass[MAX_LOADSTRING];
 
 ATOM MyRegisterClass(HINSTANCE hInstance);
@@ -883,13 +883,13 @@ void java_minecraft()
 	{
 		MessageBoxW(nullptr,
 		            L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jdk-17\\bin\\javaw.exe",
-		            L"MOBASuite", MB_OK);
+		            L"LoLUpdater", MB_OK);
 	}
 	else
 	{
 		MessageBoxW(nullptr,
 		            L"Minecraft Launcher > Minecraft: Java Edition > Installations > Latest > Edit > More Options > Java Executable Path > <drive>:\\Program Files\\Java\\jre-8u391\\bin\\javaw.exe",
-		            L"MOBASuite", MB_OK);
+		            L"LoLUpdater", MB_OK);
 	}
 }
 
@@ -976,7 +976,7 @@ void mame()
 	{
 		MessageBoxW(nullptr,
 		            L"Sorry, MAME is not available for x86",
-		            L"MOBASuite", MB_OK);
+		            L"LoLUpdater", MB_OK);
 	}
 	sei = {};
 	sei.cbSize = sizeof(SHELLEXECUTEINFOW);
@@ -1040,7 +1040,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
 	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-	LoadStringW(hInstance, IDC_MOBASUITE, szWindowClass, MAX_LOADSTRING);
+	LoadStringW(hInstance, IDC_LOLUPDATER, szWindowClass, MAX_LOADSTRING);
 	MyRegisterClass(hInstance);
 
 	if (!InitInstance(hInstance, nCmdShow))
@@ -1048,7 +1048,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		return FALSE;
 	}
 
-	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_MOBASUITE));
+	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_LOLUPDATER));
 
 	MSG msg;
 
