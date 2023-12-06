@@ -656,20 +656,19 @@ void leagueoflegends(bool restore)
 	PathAppend(54, L"UX");
 	UnblockFile(PathJoin(54, L"LeagueClientUx.exe"));
 	UnblockFile(PathJoin(54, L"LeagueClientUxRender.exe"));
-	PathCombine(49, 42, L"D3DCompiler_43.dll");
 	PathCombine(44, 0, L"concrt140.dll");
 	PathCombine(45, 0, L"vcruntime140.dll");
 	PathCombine(46, 0, L"ucrtbase.dll");
 	PathCombine(47, 0, L"msvcp140.dll");
 	PathCombine(48, 42, L"tbb.dll");
 	PathCombine(50, 42, L"D3DCompiler_47.dll");
-	PathCombine(51, 0, L"D3DCompiler_47.dll");
+	PathCombine(51, 0, L"d3dcompiler_47.dll");
 	PathCombine(52, 0, L"msvcp140_1.dll");
 	PathCombine(53, 0, L"msvcp140_2.dll");
 	PathCombine(54, 0, L"vcruntime140_1.dll");
 	PathCombine(55, 0, L"msvcp140_codecvt_ids.dll");
 	PathCombine(56, 42, L"D3dx9_43.dll");
-	PathCombine(57, 42, L"D3DCompiler_47_game.dll");
+	PathCombine(57, 42, L"D3DCompiler_47.dll");
 	
 
 	if (restore)
@@ -681,8 +680,6 @@ void leagueoflegends(bool restore)
 		download(L"r/lol/vcruntime140_1.dll", 54);
 		download(L"r/lol/ucrtbase.dll", 46);
 		download(L"r/lol/msvcp140.dll", 47);
-		download(L"r/lol/D3DCompiler_43.dll", 49);
-		download(L"r/lol/d3dcompiler_47.dll", 50);
 		download(L"r/lol/d3dcompiler_47.dll", 51);
 		download(L"r/lol/msvcp140_1.dll", 52);
 		download(L"r/lol/msvcp140_2.dll", 53);
@@ -698,7 +695,6 @@ void leagueoflegends(bool restore)
 		download(L"vcruntime140_1.dll", 54);
 		download(L"ucrtbase.dll", 46);
 		download(L"msvcp140.dll", 47);
-		download(L"D3DCompiler_47.dll", 50);
 		download(L"D3DCompiler_47.dll", 51);
 		download(L"msvcp140_1.dll", 52);
 		download(L"msvcp140_2.dll", 53);
