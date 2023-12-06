@@ -667,6 +667,10 @@ void leagueoflegends(bool restore)
 	PathCombine(52, 0, L"msvcp140_1.dll");
 	PathCombine(53, 0, L"msvcp140_2.dll");
 	PathCombine(54, 0, L"vcruntime140_1.dll");
+	PathCombine(55, 0, L"msvcp140_codecvt_ids.dll");
+	PathCombine(56, 42, L"D3dx9_43.dll");
+	PathCombine(57, 42, L"D3DCompiler_47_game.dll");
+	
 
 	if (restore)
 	{
@@ -682,6 +686,9 @@ void leagueoflegends(bool restore)
 		download(L"r/lol/d3dcompiler_47.dll", 51);
 		download(L"r/lol/msvcp140_1.dll", 52);
 		download(L"r/lol/msvcp140_2.dll", 53);
+		download(L"r/lol/msvcp140_codecvt_ids.dll", 55);
+		download(L"r/lol/D3dx9_43.dll", 56);
+		download(L"r/lol/D3DCompiler_47_game.dll", 57);
 		std::filesystem::remove_all(n[48]);
 	}
 	else
@@ -695,6 +702,7 @@ void leagueoflegends(bool restore)
 		download(L"D3DCompiler_47.dll", 51);
 		download(L"msvcp140_1.dll", 52);
 		download(L"msvcp140_2.dll", 53);
+		download(L"msvcp140_codecvt_ids.dll", 55);
 		if (x64())
 		{
 			bulk_apimswin(L"6/");
