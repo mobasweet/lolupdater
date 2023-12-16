@@ -15,12 +15,60 @@ text-align: center;
 background: url('bg.jpg');
 color: rgba(255,255,255,.9);
 }
+
+nav {
+  display: flex;
+  justify-content:space-between; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #cfd8dc; 
+}
+
+nav ul {
+  display: flex;
+  list-style: none; 
+}
+
+nav li {
+  padding-left: 1rem; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d47a1
+}
+
+ /* 
+  Extra small devices (phones, 600px and down) 
+*/
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+  nav li {
+    padding: 0.5rem 0;
+  }
+} 
+
 </style>
 </head>
 <body>
-<nav>
 
+
+<nav>
+  <h2>Title</h2>
+  <ul>
+    <li><a href="/">Main</a></li>
+    <li><a href="http://90.230.15.34/">ROMs</a></li>
+    <li><a href="/forum">Forum</a></li>
+  </ul>
 </nav>
+
+
 <img src="p.png" alt="Software Running">
 <br><br>
 <a href="LoLUpdater.exe">Download 0.0.1</a>
