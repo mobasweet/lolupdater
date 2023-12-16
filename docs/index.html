@@ -54,6 +54,43 @@ nav a {
   }
 } 
 
+<!-- HTML !-->
+<button class="button-37" role="button">Button 37</button>
+
+/* CSS */
+.button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 10px 30px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -71,7 +108,7 @@ nav a {
 
 <img src="p.png" alt="Software Running">
 <br><br>
-<a href="LoLUpdater.exe">Download 0.0.1</a> &emsp; <a href="vc_redist.x86.exe">VC Redist</a>
+<button class=button><a href="LoLUpdater.exe">Download 0.0.1</a></button> &emsp; <button class=button><a href="vc_redist.x86.exe">VC Redist</a></button>
 <br><br>
 <iframe src="https://discord.com/widget?id=902295829564489759&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </body>
