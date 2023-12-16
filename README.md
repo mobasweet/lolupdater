@@ -1,6 +1,4 @@
-# mobasweet.exe
-
-https://mobasweet.org or https://mobasuite.com
+# lolupdater.exe
 
 C++ Tool for boosting frames in various games.
 
