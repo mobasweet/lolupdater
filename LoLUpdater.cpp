@@ -62,7 +62,7 @@ std::wstring apimswin[] = {
 
 wchar_t n[83][MAX_PATH + 1];
 SHELLEXECUTEINFOW sei;
-int combobox;
+int cb;
 
 const wchar_t* box[18] = {
 	L"League of Legends", L"SMITE", L"DOTA2", L"Minecraft Java",
@@ -1132,11 +1132,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 			if (HIWORD(wParam) == CBN_SELCHANGE)
 			{
-				combobox = SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0);
+				cb = SendMessage(reinterpret_cast<HWND>(lParam), CB_GETCURSEL, 0, 0);
 			}
 			if (LOWORD(wParam) == 1)
 			{
-				switch (combobox)
+				switch (cb)
 				{
 				case 0:
 					leagueoflegends(false);
@@ -1197,7 +1197,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			}
 			else if (LOWORD(wParam) == 2)
 			{
-				switch (combobox)
+				switch (cb)
 				{
 				case 0:
 					leagueoflegends(true);
