@@ -66,7 +66,7 @@ int cb;
 
 const wchar_t* box[18] = {
 	L"League of Legends", L"SMITE", L"DOTA2", L"Minecraft Java",
-	L"Black Desert", L"Paladins", L"World of Tanks", L"World of Warships", L"Lineage 2",
+	L"Black Desert", L"Paladins", L"World of Tanks", L"World of Warships", L"Lineage II",
 	L"Elder Scrolls Online", L"GameLoop", L"DirectX9 Unblocked", L"VCRedist AIO", L"Creative ALchemy", L"FinalBurn Neo",
 	L"MAME", L"TrackMania Next", L"HBMAME"
 };
@@ -202,7 +202,7 @@ void cfg(const std::wstring& key)
 		}
 		if (key == L"ww")
 		{
-			i.lpszTitle = L"<drive>:\\Games\\World_of_Warships\\bin\\7708495\\win64";
+			i.lpszTitle = L"<drive>:\\Games\\World_of_Warships\\bin\\7814610\\win64";
 		}
 		if (key == L"bd")
 		{
@@ -272,18 +272,15 @@ void calchemy(bool restore)
 	UnblockFile(PathJoin(0, L"StarCraft.exe"));
 	UnblockFile(PathJoin(0, L"WarCraft III.exe"));
 	UnblockFile(PathJoin(0, L"Wow.exe"));
-	PathCombine(1, 0, L"dsound.ini");
-	PathCombine(2, 0, L"dsound.dll");
+	PathCombine(1, 0, L"dsound.dll");
 
 	if (restore)
 	{
 		std::filesystem::remove_all(n[1]);
-		std::filesystem::remove_all(n[2]);
 	}
 	else
 	{
-		download(L"dsound.ini", 1);
-		download(L"dsound.dll", 2);
+		download(L"dsound.dll", 1);
 	}
 
 	exit(0);
