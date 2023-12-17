@@ -70,9 +70,7 @@ ul.sidenav li a:hover:not(.active) {
     float: none;
   }
 }
- /* 
-  Extra small devices (phones, 600px and down) 
-*/
+
 @media only screen and (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -86,8 +84,7 @@ ul.sidenav li a:hover:not(.active) {
   }
 } 
 
-/* CSS */
-.button {
+button {
   background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
@@ -109,13 +106,13 @@ ul.sidenav li a:hover:not(.active) {
   touch-action: manipulation;
 }
 
-.button:hover {
+button:hover {
   box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
   transform: translateY(-2px);
 }
 
 @media (min-width: 768px) {
-  .button {
+  button {
     padding: 10px 30px;
   }
 }
@@ -133,7 +130,7 @@ ul.sidenav li a:hover:not(.active) {
 
 <img src="p.png" alt="Software Running">
 <br><br>
-<button class=button><a href="LoLUpdater.exe">Download 0.0.1</a></button> &emsp; <button class=button><a href="vc_redist.x86.exe">VC Redist</a></button>
+<button><a href="LoLUpdater.exe">Download 0.0.1</a></button> &emsp; <button><a href="vc_redist.x86.exe">VC Redist</a></button>
 <br><br>
 <iframe src="https://discord.com/widget?id=902295829564489759&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </body>
