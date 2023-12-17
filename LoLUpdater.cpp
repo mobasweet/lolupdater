@@ -696,15 +696,14 @@ void leagueoflegends(bool restore)
 		download(L"msvcp140_1.dll", 52);
 		download(L"msvcp140_2.dll", 53);
 		download(L"msvcp140_codecvt_ids.dll", 55);
+		bulk_apimswin(L"");
 		if (x64())
 		{
-			bulk_apimswin(L"6/");
 			download(L"6/tbb12.dll", 48);
 			download(L"6/D3DCompiler_47.dll", 49);
 		}
 		else
 		{
-			bulk_apimswin(L"");
 			download(L"tbb12.dll", 48);
 			download(L"D3DCompiler_47.dll", 49);
 		}
