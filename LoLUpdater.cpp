@@ -1091,7 +1091,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	                         CW_USEDEFAULT, 350, 130,
 	                         nullptr, nullptr, hInstance, nullptr);
 
-	CreateWindow(L"BUTTON", L"Patch", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 10, 75,
+	CreateWindow(L"BUTTON", L"Patch", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 10, 10, 75,
 	             75, hWnd, reinterpret_cast<HMENU>(1), hInstance, nullptr);
 
 	CreateWindow(L"BUTTON", L"Restore", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 250, 10, 75,
